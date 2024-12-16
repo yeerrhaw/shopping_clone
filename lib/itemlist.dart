@@ -13,7 +13,13 @@ class Itemlist {
       liked: false,
     ),
     Item(
-      image: 
-    )
+      image: 'images/image_shop_7,jpg',
+      title: 'Easysoft Sandal',
+      rate: 3,
+      sold: '50.2K',
+      location: 'Davao City, Davao del sur',
+      price: '999',
+      liked: false, 
+    ),
   ];
 }
