@@ -12,6 +12,69 @@ class GridViewSample extends StatefulWidget {
 class _GridViewSampleState extends State<GridViewSample> {
   Itemlist items= Itemlist();
 
+  Widget buttons(Item item) => Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      buttonLike(item),
+      buttonAddToCart(item),
+    ],
+  );
+
+  Widget buttonAddToCart(Item item) => TextButton.icon(
+    onPressed: () {},
+    icon: const Icon(
+      Icons.remove_red_eye,
+      color: Colors.grey,
+    ),
+    label: const Text(
+      'VIEW',
+      style: TextStyle(color: Colors.grey),
+    )
+  );
+
+  Widget buttonLike(Item item) => TextButton.icon(
+    onPressed: () {},
+    icon: const Icon(
+      Icons.thumb_up_sharp,
+      color: Colors.grey,
+    ),
+    label: const Text(
+      'LIKE',
+      style: TextStyle(
+        color: Colors.grey,
+      )
+    )
+  );
+
+  Widget location(Item item) => Row(
+    children: [
+      const Icon(
+        Icons.add_location,
+        size: 18,
+      ),
+      Expanded(
+        child: Text(
+          softWrap: false,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          item.location,
+        ),
+      )
+    ]
+  );
+
+  Widget ratingSold(Item item) => Row(
+    children: [
+      starsYellow(item.rate),
+      const SizedBox(
+        width: 5,
+      ),
+      Text(
+        '${item.sold} sold'
+      )
+    ]
+  );
+
   Widget starsYellow(i) => Row(
     mainAxisSize: MainAxisSize.min,
     children: [
