@@ -118,7 +118,10 @@ class _GridViewSampleState extends State<GridViewSample> {
               fontSize: 24,
               fontWeight: FontWeight.bold,
             )
-          )
+          ),
+          ratingSold(item),
+          location(item),
+          buttons(item),
         ],
       )
     )
