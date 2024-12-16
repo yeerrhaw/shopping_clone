@@ -1,7 +1,7 @@
 import 'package:shopping_clone1/models/item.dart';
 
 
-class Itemlist {
+class ItemList {
   List<Item> itemlist = [
     Item(
       image: 'images/image_shop_10.jpg',

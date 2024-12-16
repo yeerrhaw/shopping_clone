@@ -10,7 +10,7 @@ class GridViewSample extends StatefulWidget {
 }
 
 class _GridViewSampleState extends State<GridViewSample> {
-  Itemlist items= Itemlist();
+  ItemList items= ItemList();
 
   Widget buttons(Item item) => Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,

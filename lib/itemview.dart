@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_clone1/itemlist.dart';
+import 'package:shopping_clone1/models/item.dart';
 
 class ItemView extends StatefulWidget {
   const ItemView({super.key});
@@ -14,18 +15,18 @@ class _ItemViewState extends State<ItemView> {
   TextEditingController titleController = TextEditingController();
   TextEditingController priceController = TextEditingController();
 
-  Widget listTile(Items item) => ListTile(
+  Widget listTile(Item item) => ListTile(
         leading: Image.asset(item.image),
         title: Text(item.title),
         subtitle: Text(item.price),
       );
 
   addItem(){
-    Items newItem = Items(
-      image: ''
+    Item newItem = Item(
+      image: '',
       title: titleController.text,
       rate: 1,
-      sold: 1,
+      sold: '1',
       location: 'Davao City, Davao del Sur',
       price: priceController.text,
       liked:false,
@@ -39,13 +40,15 @@ class _ItemViewState extends State<ItemView> {
     });
   }
   showAddDialog(context) {
-    return showDialog(context, context, builder: (context) {
-      return AlertDialog(
-        content: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          content: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
               controller: titleController,
               decoration: const InputDecoration(hintText: 'Input Item Title'),
             ),
@@ -70,10 +73,11 @@ class _ItemViewState extends State<ItemView> {
                 )
               ],
             )
-          ],
-        ),
-      );
-    });
+            ],
+          )
+        );
+      }
+    );    
   }
 
   @override
